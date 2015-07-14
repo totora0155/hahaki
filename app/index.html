@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="hahaki">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/index.css">
+  <link href="https://fontastic.s3.amazonaws.com/StQT2KBoH3mvxvXN3bvEqH/icons.css" rel="stylesheet">
+
+  <div class="hahaki">
+    <main class="wrapper"
+    ng-controller="HahakiController as hahaki">
+      <ul class="card-list">
+        <li class="card-item"
+        ng-repeat="tab in hahaki.tabs" ng-class="{'card-disabled': tab.remove || tab.enterWithRemove}"
+        ng-mouseleave="tab.enterWithRemove = false"
+        card>
+      </ul>
+
+      <aside class="sidebar">
+        <svg class="logo" viewBox="0 0 908 1328" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+            <g transform="matrix(1,0,0,1,-732.107,-1018.41)">
+                <path d="M1051.39,1348.19C1202.01,1636.46 1102.58,1834.84 757.511,1843.22C762.074,2181.83 902.142,2320.96 1199.1,2320.96C1496.06,2320.96 1569.01,2055.95 1569.01,1968.98C1569.01,1882.01 1534.6,1820.76 1502.43,1731.33C1488.17,1664.25 1487.32,1606.75 1525.57,1543.98C1563.83,1481.21 1614.57,1386.48 1614.57,1386.48C1487.88,1206.3 1221.61,1195.88 1051.39,1348.19Z" style="fill:none;stroke-width:29.33px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-732.107,-1018.41)">
+                <path d="M1356.42,1242.35L1424.57,1043.81L1502.69,1062L1455.97,1263.78" style="fill:none;stroke-width:29.33px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-732.107,-1018.41)">
+                <path d="M1199.12,2221.43L1171.77,2316.67" style="fill:none;stroke-width:29.33px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-732.107,-1018.41)">
+                <path d="M1115.92,2193.03L1078.9,2307.49" style="fill:none;stroke-width:29.33px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-732.107,-1018.41)">
+                <path d="M1120.02,1526.99C1271.94,1476.93 1369.25,1483.27 1529.15,1538.34" style="fill:none;stroke-width:29.33px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-732.107,-1018.41)">
+                <path d="M1104.73,1678.79C1248.51,1766.5 1363.44,1769.04 1505.59,1735.47" style="fill:none;stroke-width:29.33px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,16.3823,16.3823)">
+                <g transform="matrix(1,-0,-0,1,-16.3823,-16.3823)">
+                    <use xlink:href="#_Image1" x="370.382" y="26.382" width="425px" height="710px"/>
+                </g>
+            </g>
+            <defs>
+                <image id="_Image1" width="425px" height="710px" xlink:href="data:image/png;base64,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"/>
+            </defs>
+        </svg>
+
+        <ul class="opt-list">
+          <li class="opt-item">
+            <span class="i-file-directory"></span>
+            <input id="foldername" class="opt-foldername" type="text"
+            ng-model="hahaki.foldername">
+          </li>
+        </ul>
+        <button class="btn-dl"
+        ng-click="hahaki.download(hahaki.foldername, hahaki.tabs, hahaki.closeAfterDl, (hahaki.tabs | size), (hahaki.forms | allValid))" ng-show="hahaki.loaded"
+        ng-class="{'btn-disabled': (hahaki.tabs | size) == 0 || !(hahaki.forms | allValid)}">Download {{hahaki.tabs | size}} images</button>
+        <div class="ask">
+          <input id="ask" type="checkbox" class="btn-ask" ng-model="hahaki.closeAfterDl"><label for="ask">Close all image tabs<br>after downloading?<label>
+        </div>
+      </aside>
+
+      <div class="full-view-wrapper"
+      ng-show="hahaki.fullView" ng-click="hahaki.closeFullView()">
+        <div class="full-view-group">
+          <a class="full-view-close" role="button"
+          ng-click="hahaki.closeFullView()">
+            <span class="i-x"></span>
+          </a>
+          <img class="full-view-img"
+          ng-src="{{hahaki.fullView | base64}}">
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script/lib/angular.min.js"></script>
+  <script src="script/lib/lodash.custom.min.js"></script>
+  <script src="script/lib/jszip.min.js"></script>
+  <script src="script/lib/FileSaver.js"></script>
+  <script src="script/index.js"></script>
+</html>

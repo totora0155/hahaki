@@ -1,0 +1,25 @@
+<div id="card-img" class="card-img"
+card-img={{tab.img}}></div>
+<div class="card-ctrl">
+  <a role="button" class="card-ctrl-btn"
+  ng-click="hahaki.fullscreen($index)">
+    <span class="i-screen-full"></span>
+  </a>
+  <a role="button" class="card-ctrl-btn"
+  ng-click="hahaki.remove($index)">
+    <span class="i-x"></span>
+  </a>
+</div>
+<form name="form" class="card-form-group">
+  <label for="input-{{$index}}" class="card-form-label">Download name</label>
+  <input id="input-{{$index}}" name="filename{{$index}}" class="card-form-input" type="text"
+  ng-model="tab.path.filename" uniq required
+  ng-model-options="{ updateOn: 'blur' }">
+  <span class="card-form-note" ng-cloak>.{{tab.path.extname}}</span>
+</form>
+<div class="card-undo"
+ng-show="tab.remove" ng-click="hahaki.undo($index)"
+ng-mouseenter="tab.enterWithRemove = true">
+  <span class="i-triangle-left"></span><br><span>UNDO</span>
+</div>
+</div>
