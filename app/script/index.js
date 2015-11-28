@@ -43,7 +43,17 @@ angular.module('hahaki', []).constant('IMG_RE', /\.(?:jpe?g|png|gif)$/).filter('
 }).controller('HahakiController', function($scope, $q, base64, IMG_RE) {
   var hahaki;
   hahaki = this;
-  hahaki.foldername = "images";
+  hahaki.foldername = (function() {
+    var date, hour, min, month, n, sec, year;
+    n = new Date();
+    year = n.getFullYear().toString();
+    month = ('0' + (n.getMonth() + 1)).slice(-2);
+    date = ('0' + n.getDate()).slice(-2);
+    hour = ('0' + n.getHours()).slice(-2);
+    min = ('0' + n.getMinutes()).slice(-2);
+    sec = ('0' + n.getSeconds()).slice(-2);
+    return year + month + date + hour + min + sec;
+  })();
   hahaki.loaded = false;
   hahaki.tabs = [];
   hahaki.fullView = null;

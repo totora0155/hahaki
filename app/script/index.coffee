@@ -28,7 +28,15 @@ angular.module 'hahaki', []#, ($httpProvider) ->
 
 .controller 'HahakiController', ($scope, $q, base64, IMG_RE) ->
   hahaki = @
-  hahaki.foldername = "images"
+  hahaki.foldername = do ->
+    n = new Date()
+    year = n.getFullYear().toString()
+    month = ('0' + (n.getMonth()+1))[-2..]
+    date = ('0' + n.getDate())[-2..]
+    hour = ('0' + n.getHours())[-2..]
+    min = ('0' + n.getMinutes())[-2..]
+    sec = ('0' + n.getSeconds())[-2..]
+    year + month + date + hour + min + sec
   hahaki.loaded = false
   hahaki.tabs = []
   hahaki.fullView = null
