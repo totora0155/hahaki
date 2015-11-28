@@ -1,0 +1,21 @@
+{
+  "name": "hahaki",
+  "description": "Download to Image of opened image tab",
+  "scripts": {
+    "dist": "rsync -r --exclude-from '.exclude' app/ dist/",
+    "postdist": "zip -r hahaki.zip dist/",
+    "css": "stylus -w -o app/style/ app/style/*.styl",
+    "js": "coffee -bw -o app/script app/script/*.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/totora0155/hahaki.git"
+  },
+  "author": "nju33",
+  "license": "MIT",
+  "homepage": "https://github.com/totora0155/hahaki#readme",
+  "devDependencies": {
+    "coffee-script": "1.10.0",
+    "stylus": "0.52.4"
+  }
+}

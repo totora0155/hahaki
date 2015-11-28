@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Hahaki",
+    "description": "ウェブストアで表示されるアプリ名"
+  },
+  "appDesc": {
+    "message": "Download zip together the image of the open image tab (tab, such as ending in .jpg)! !",
+    "description": "ウェブストアで表示されるアプリの詳細説明"
+  }
+}
