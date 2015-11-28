@@ -44,7 +44,7 @@ angular.module 'hahaki', []#, ($httpProvider) ->
     $q.all promises
     .then (base64List) ->
       hahaki.tabs = _.map imgTabs, (tab, i) ->
-        pickedName = tab.title.match /^([^.]+)\.(jpe?g|png|gif)/
+        pickedName = tab.title.match /^([^.]+)\.(jpe?g|png|gif)/i
         {
           id: tab.id
           path:

@@ -65,7 +65,7 @@ angular.module('hahaki', []).constant('IMG_RE', /\.(?:jpe?g|png|gif)$/).filter('
     return $q.all(promises).then(function(base64List) {
       hahaki.tabs = _.map(imgTabs, function(tab, i) {
         var pickedName;
-        pickedName = tab.title.match(/^([^.]+)\.(jpe?g|png|gif)/);
+        pickedName = tab.title.match(/^([^.]+)\.(jpe?g|png|gif)/i);
         return {
           id: tab.id,
           path: {
